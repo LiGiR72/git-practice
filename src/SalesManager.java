@@ -14,11 +14,11 @@ public class SalesManager {
         }
         return max;
     }
-    public int stat(){
-        int  min = 0;
-        int max = 0;
-        int meridian = 0;
-        for (int sale : sales) {
+    public long stat(){
+        long  min = 0;
+        long max = 0;
+        long meridian = 0;
+        for (long sale : sales) {
             if (sale > max) {
                 max = sale;
             }
@@ -26,7 +26,7 @@ public class SalesManager {
                 min = sale;
             }
         }
-        for (int sale: sales) {
+        for (long sale: sales) {
             if (sale == min) {
                 continue;
             }
