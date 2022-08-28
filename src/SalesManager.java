@@ -15,25 +15,22 @@ public class SalesManager {
         return max;
     }
     public long stat(){
-        long  min = 0;
-        long max = 0;
+        long  minIndex = 0;
+        long maxIndex = 0;
         long meridian = 0;
-        for (long sale : sales) {
-            if (sale > max) {
-                max = sale;
+        for(int i = 0; i < sales.length; i++){
+            if (sales[i] > maxIndex ) {
+                maxIndex = i;
             }
-            if (sale < min) {
-                min = sale;
+            if (sales[i] <= minIndex) {
+                minIndex = sales[i];
             }
         }
-        for (long sale: sales) {
-            if (sale == min) {
+        for(int i = 0; i < sales.length; i++){
+            if(i == maxIndex || i == minIndex){
                 continue;
             }
-            if(sale == max) {
-                continue;
-            }
-            meridian += sale;
+            meridian += sales[i];
         }
         return meridian/(sales.length - 2);
     }
